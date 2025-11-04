@@ -80,7 +80,7 @@ Once again, several input parameters can be modified to adapt the analysis to di
 
 Finally, the `plot_pareto_fronts.m` script is designed to visualize Pareto fronts obtained from multiple experimental configurations, highlighting the trade-off between network performance and social or ethical value. Each curve in the plot corresponds to a different configuration. For each configuration, the script reads the file `pareto_solutions.csv` located inside a results folder, extracts the total network quality performance (KPI) and total social and ethical value (KVI), and plots these as a series of connected points. The result is a comparative figure that shows how the Pareto fronts shift under varying system conditions.
 
-Among the input parameters which can be modified to tailor the analysis, we recall the main path (`main_folder`). The list of result folders (`result_names`) defines which configurations are included in the plot and can be adjusted depending on the set of experiments being compared—for instance, to vary the number of services, resources, or parameter delta. 
+Among the input parameters which can be modified to tailor the analysis, we recall the main path (`main_folder`). The list of result folders (`result_names`) defines which configurations are included in the plot and can be adjusted depending on the set of experiments being compared. 
 
 # Additional Support
 Please refer to this web page for additional support.
