@@ -106,7 +106,7 @@ class Service:
 
 class Resource:
     def __init__(self, id, availability, kpi_resource, kvi_resource, carbon_offset, P_c, u_c, P_m, fcp, N0,
-                 lambda_failure, lambda_services_per_hour, likelihood):
+                 lambda_failure, lambda_services_per_day, likelihood):
         self.id = id
         self.availability = availability
         self.kpi_resource = np.array(kpi_resource)
@@ -118,7 +118,7 @@ class Resource:
         self.fpc = fcp
         self.N0 = N0
         self.lambda_failure = lambda_failure
-        self.lambda_services_per_hour = lambda_services_per_hour
+        self.lambda_services_per_day = lambda_services_per_day
         self.likelihood = likelihood
 
     def get_availability(self):
@@ -151,8 +151,8 @@ class Resource:
     def get_lambda_failure(self):
         return self.lambda_failure
 
-    def get_lambda_services_per_hour(self):
-        return self.lambda_services_per_hour
+    def get_lambda_services_per_day(self):
+        return self.lambda_services_per_day
 
     def get_likelihood(self):
         return self.likelihood
@@ -187,8 +187,8 @@ class Resource:
     def set_lambda_failure(self, value):
         self.lambda_failure = value
 
-    def set_lambda_services_per_hour(self, value):
-        self.lambda_services_per_hour = value
+    def set_lambda_services_per_day(self, value):
+        self.lambda_services_per_day = value
 
     def set_likelihood(self, value):
         self.likelihood = value
@@ -280,7 +280,7 @@ if __name__ == '__main__':
             fcp_values = [40e9, 100e9, 100e9, 150e9]
             N0 = 10e-10
             lambda_failure_values = [8760, 8760, 8760, 45000, 45000]
-            lambda_services_per_hour_values = [150, 200, 200, 250]
+            lambda_services_per_day_values = [150, 200, 200, 250]
             likelihood_values = [0.25, 0.5, 0.75, 1]
 
             # Indicators offered by the resources
@@ -305,7 +305,7 @@ if __name__ == '__main__':
                     P_m_value = 0.1
                     fcp_value = 40e9
                     lambda_failure_value = 8760
-                    lambda_services_per_hour_value = 250
+                    lambda_services_per_day_value = 250
                     likelihood_value = 0.25
                     deadline_off = 0.8
                     data_rate_off = 85.0
@@ -316,7 +316,7 @@ if __name__ == '__main__':
                     P_m_value = 0.2
                     fcp_value = 100e9
                     lambda_failure_value = 45000
-                    lambda_services_per_hour_value = 200
+                    lambda_services_per_day_value = 200
                     likelihood_value = 0.5
                     deadline_off = 0.4
                     data_rate_off = 110.0
@@ -327,7 +327,7 @@ if __name__ == '__main__':
                     P_m_value = 0.2
                     fcp_value = 150e9
                     lambda_failure_value = 45000
-                    lambda_services_per_hour_value = 150
+                    lambda_services_per_day_value = 150
                     likelihood_value = likelihood_values[chosen_index]
                     deadline_off = 0.01
                     data_rate_off = 250.0
@@ -341,7 +341,7 @@ if __name__ == '__main__':
                 resource.set_P_m(P_m_value)
                 resource.set_fpc(fcp_value)
                 resource.set_lambda_failure(lambda_failure_value)
-                resource.set_lambda_services_per_hour(lambda_services_per_hour_value)
+                resource.set_lambda_services_per_day(lambda_services_per_day_value)
                 resource.set_likelihood(likelihood_value)
 
                 resources.append(resource)
@@ -349,7 +349,7 @@ if __name__ == '__main__':
 
             for resource in resources:
                 print(resource.id, resource.availability, resource.kpi_resource, resource.fpc,
-                      resource.P_m, resource.P_c, resource.lambda_services_per_hour, resource.likelihood)
+                      resource.P_m, resource.P_c, resource.lambda_services_per_day, resource.likelihood)
 
             # Computation of Q_MIN and computation time
 
