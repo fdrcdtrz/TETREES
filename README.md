@@ -15,7 +15,7 @@ $ git pull
 To run the framework you also need:
 
 - MATLAB software, available at [this link](https://www.mathworks.com/help/install/ug/install-products-with-internet-connection.html);
-- Gurobi Optimization (with a valid license). First of all, obtain your Gurobi Optimization license: you will see it on the Gurobi Optimization website, section User Portal. In the licenses tab, locate your license ID, click the installation icon. A window will pop up with a guide to follow. You'll be asked to install the Gurobi Optimizer software on your computer ([via this link](https://www.gurobi.com/downloads/gurobi-software/)), download the license through the _Download License_ button, and then install it via the suggested command  (e.g., 'grbgetkey <license-key>'; copy and input it in a command/terminal prompt. This command required an active internet connection to communicate with the Gurobi servers.
+- Gurobi Optimization (with a valid license). First of all, obtain your Gurobi Optimization license: you will see it on the Gurobi Optimization website, section User Portal. In the licenses tab, locate your license ID, click the installation icon. A window will pop up with a guide to follow. You'll be asked to install the Gurobi Optimizer software on your computer ([via this link](https://www.gurobi.com/downloads/gurobi-software/)), download the license through the _Download License_ button, and then install it via the suggested command  (e.g., `grbgetkey <license-key>`; copy and input it in a command/terminal prompt. This command required an active internet connection to communicate with the Gurobi servers.
 
 > [!NOTE]
 > Getting a Gurobi license allows you to run bigger instances of the optimization problem.
@@ -50,16 +50,17 @@ Defined by:
 
 ### Optimization Parameters 
 
-Specified in optimization.py, including:
-delta – ε-step size for discretization
-KPI and KVI weights
-Gurobi solver parameters:
-MIPGap: allowable optimality gap between the best feasible solution and the theoretical bound
-MIPFocus: solver emphasis (e.g., finding feasible solutions fast vs. proving optimality)
-VarBranch: branching strategy (e.g., reduced-cost or strong branching)
-Global parameters such as the carbon intensity factor (CI) and power usage effectiveness (PUE) can also be configured.
-For a complete explanation of parameters and methodology, refer to the paper:
-Exact ε-constraint optimization for service-to-resource assignment (Computer Communications, 2025)
+Specified in `main.py`, including:
+- delta, hence the ε-step size for discretization.
+- KPI and KVI weights.
+
+Specified in `optimization.py`, including:
+- MIPGap, the allowable optimality gap between the best feasible solution and the theoretical bound
+- MIPFocus, the solver emphasis (e.g., finding feasible solutions fast vs. proving optimality)
+- VarBranch,  the branching strategy (e.g., reduced-cost or strong branching)
+
+Global parameters such as the carbon intensity factor (`CI`) and power usage effectiveness (`PUE`) can also be configured.
+For a complete explanation of parameters and methodology, refer to [this paper](https://www.sciencedirect.com/science/article/pii/S138912862500444X)
 
 ## Running a simulation with TETREES
 
