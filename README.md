@@ -5,13 +5,13 @@ TETREES is a Python-based optimization framework that leverages the Gurobi solve
 ## Getting TETREES
 
 TETREES is available via Git at this link. To obtain TETREES enter into the your prefered folder and write the following syntax:
-
+'''
 $ git clone https://github.com/fdrcdtrz/TETREES.git
-
+'''
 To synchronize the project repository with the local copy, you can run the pull sub-command. The syntax is as follows:
-
+'''
 $ git pull
-
+'''
 To run the framework you also need:
 
 - MATLAB software, available at this link; https://www.mathworks.com/help/install/ug/install-products-with-internet-connection.html
