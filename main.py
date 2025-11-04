@@ -5,7 +5,6 @@ import numpy as np
 
 from benchmark import *
 from initialization import *
-from knapsacks import *
 from optimization import *
 
 
