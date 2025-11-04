@@ -49,13 +49,13 @@ If you plan to run the epsilon-constraint optimization provided by TETREES, make
 TETREES can be fully customized for service-to-resource assignment problems.
 The main configurable components are:
 
-### Services 
+### 👥 Services 
 
 Characterized by:
 - Number and type of services.
 - Deadlines, packet loss rate, data rate, size, and impact.
 
-### Resources 
+### 🔎Resources 
 
 Defined by:
 - Demand, number, availability, carbon offset.
@@ -64,7 +64,7 @@ Defined by:
 - Core usage factor (`u_c`), processing capability (`fpc`).
 - Average demand per hour, mean time to failure (`lambda_failure`), and likelihood of attacks.
 
-### Optimization Parameters 
+### 🛠️Optimization Parameters 
 
 Specified in `main.py`, including:
 - delta, hence the ε-step size for discretization.
