@@ -48,7 +48,7 @@ def compute_computation_time(service, resource):
 
 # function KVI environmental sustainability
 def compute_energy_sustainability(resource, computation_time, CI=475, PUE=1.67):
-    return  (computation_time / 3600) * resource.lambda_services_per_hour * (
+    return  (computation_time / 3600) * resource.lambda_services_per_day * (
             resource.availability * resource.P_c * resource.u_c + resource.availability * resource.P_m) * PUE * CI
 
 # function KVI trustworthiness
@@ -63,7 +63,7 @@ def compute_failure_probability(computation_time, resource):
     failure_probability = (1 - np.exp(exponent))  # p_rn
     F_rn_0 = (1 - failure_probability) ** resource.availability
     print("F_rn_0", F_rn_0)
-    return F_rn_0 * computation_time * resource.lambda_services_per_hour
+    return F_rn_0 * computation_time * resource.lambda_services_per_day
 
 # function to compute indicators for each (service, resource) couple, normalization and weighted sum to get V(X)
 def compute_normalized_kvi(services, resources, CI, signs):
