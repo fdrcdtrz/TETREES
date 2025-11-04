@@ -19,9 +19,13 @@ To run the framework you also need:
 Getting a Gurobi license allows you to run bigger instances of the optimization problem.
 
 
+## Setting TETREES up
+
+All the run experiments and simulations will be stored in a project titled 'results_dir', which is a parameter you can modify in 'main.py', before you specify the local path of the project folder, 'path_locale'. You then have the chance to run the main optimization provided by TETREES or a benchmark scheme to compare TETREES with, namely the random, greedy KPI, and greedy KVI approaches, respectively. If you plan to run the epsilon-constraint optimization provided by TETREES, make sure the section in 'main.py' titled _EPSILON-CONSTRAINT METHOD: COMPUTATION OF IDEAL AND NADIR POINTS AND EXACT-METHOD IMPLEMENTATION_ is not commented, while the following one titled _BENCHMARK APPROACHES: GREEDY ASSIGNMENT KPI, KVI AND RANDOM ASSIGNMENT_ is, and viceversa for the benchmark approaches. 
 
 # Links to the example headings above
 
 Link to the Introduction section: [Link Text](#trade-off-evaluation-through-refined-exact-epsilon-constraint-solver-(TETREES)).
+
 Link to the Getting TETREES section: [Link Text](#getting-tetrees).
 
