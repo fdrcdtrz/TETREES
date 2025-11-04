@@ -2,6 +2,19 @@
 
 **TETREES** is a Python-based optimization framework that leverages the Gurobi solver and implements the **exact ε-constraint** method to address the limitations of conventional multi-objective optimization techniques, particularly addressing service-to-resource assignment problems.
 
+---
+
+## Table of Contents
+- [Getting TETREES](#getting-tetrees)
+- [Setting TETREES up](#setting-tetrees-up)
+- [Customizing TETREES](#customizing-tetrees)
+- [Running a simulation with TETREES](#running-a-simulation-with-tetrees)
+- [Plotting the results of a simulation with TETREES](#plotting-the-results-of-a-simulation-with-tetrees)
+- [Additional Support](#additional-support)
+- [License](#license)
+
+---
+
 ## Getting TETREES
 
 TETREES is available via Git at [this link](https://github.com/fdrcdtrz/TETREES). To obtain TETREES enter into the your prefered folder and write the following syntax:
@@ -20,6 +33,7 @@ To run the framework you also need:
 > [!NOTE]
 > Getting a Gurobi license allows you to run bigger instances of the optimization problem.
 
+---
 
 ## Setting TETREES up
 
@@ -28,6 +42,8 @@ All the experiments outputs are stored in a project folder titled `results_dir`,
 - three benchmark schemes, namely the random, greedy KPI, and greedy KVI approaches, respectively. 
 
 If you plan to run the epsilon-constraint optimization provided by TETREES, make sure the section in `main.py` titled _EPSILON-CONSTRAINT METHOD: COMPUTATION OF IDEAL AND NADIR POINTS AND EXACT-METHOD IMPLEMENTATION_ is uncommented, while the following one titled _BENCHMARK APPROACHES: GREEDY ASSIGNMENT KPI, KVI AND RANDOM ASSIGNMENT_ is commented (and viceversa if you wish to run benchmarks). 
+
+---
 
 ## Customizing TETREES
 TETREES can be fully customized for service-to-resource assignment problems.
@@ -62,11 +78,15 @@ Specified in `optimization.py`, including:
 Global parameters such as the carbon intensity factor (`CI`) and power usage effectiveness (`PUE`) can also be configured.
 For a complete explanation of parameters and methodology, refer to [this paper](https://www.sciencedirect.com/science/article/pii/S138912862500444X).
 
+---
+
 ## Running a simulation with TETREES
 
 As an illustrative simulation scenario, we consider the case of services belonging to the *Trusted Environments* service class, such as multimedia and extended reality applications such as telepresence, education and gaming, where privacy and security are of utmost importance. In this context, the trustworthiness indicator is given higher relevance in the optimization process, with a weight of 0.8, while the remaining social KVIs, i.e., sustainability and inclusiveness, are assigned lower and equal weights of 0.1 each. This configuration reflects a design choice in which ensuring data confidentiality and reliability takes precedence over other ethical or societal concerns.
 
 From a performance perspective, the KPI weights are set to emphasize both transmission quality and reliability. Specifically, data rate and packet loss rate are assigned weights of 0.5 and 0.3, respectively, while the remaining KPI, representing for instance latency or energy efficiency, is weighted 0.2. All other resource and service setup parameters, such as the number of services, available network resources, and demand profiles, are left unchanged with respect to the current configuration defined in the repository. The optimization parameters of the solver are also kept consistent with the baseline setup, with the following key configurations: `MIPFocus=3` to reduce the number of explored nodes, `VarBranch=2` for aggressive branching, and `MIPGap=0.03` to balance solution accuracy and computational effort.
+
+---
 
 ## Plotting the results of a simulation with TETREES
 
@@ -84,3 +104,11 @@ Among the input parameters which can be modified to tailor the analysis, we reca
 
 # Additional Support
 Please refer to this web page for additional support.
+
+---
+
+## License
+
+TETREES is released under the GPL-3.0 license.
+---
+
