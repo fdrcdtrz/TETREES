@@ -54,7 +54,7 @@ Characterized by:
 - Number and type of services.
 - Deadlines, packet loss rate, data rate, size, and impact.
 
-The loop `for i in range(num_services_type)` allows to generate the service types: this block can be customized as preferred. Then, the list `probabilities` allows to bias the occurrence of certain service types: with the baseline setup, service type 7 appears more frequently, which represents a higher demand for that kind of service. Then, for each simulated service in `num_services`, a corresponding type is selected cyclically from the probabilities list, generating the array `service_requests`. 
+The loop `for i in range(num_services_type)` allows to generate the service types: this block can be customized as preferred. The list `probabilities` allows to bias the occurrence of certain service types: with the baseline setup, service type 7 appears more frequently, which represents a higher demand for that kind of service. Then, for each simulated service in `num_services`, a corresponding type is selected cyclically from the probabilities list, generating the array `service_requests`. 
 
 ### 🔎Resources 
 
@@ -104,7 +104,7 @@ Once the csv files have been generated, it is possible to plot significant resul
     - Among the input parameters which can be modified to tailor the analysis, we recall the main path (`main_folder`). The list of result folders (`result_names`) defines which configurations are included in the plot and can be adjusted depending on the set of experiments being compared. 
 
 # Additional Support
-Please refer to this web page for additional support. TEETRES is released under the GPL-3.0 license.
+Please refer to this web page for additional support.
 
 
 ## License
