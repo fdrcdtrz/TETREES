@@ -9,7 +9,7 @@ main_folder = 'C:\Users\Federica de Trizio\PycharmProjects\CutAndSolve'; % to mo
 folders = dir(fullfile(main_folder, 'results_*'));
 
 % Select specific folders with files to plot
-result_names = ["fig3_120_80_0.1", "fig3_240_160_0.1","fig3_480_320_0.1", "fig3_720_480_0.1", "fig3_960_640_0.1", "fig3_1200_800_0.1"]; % da cambiare: prima tutti 150/160/170/180/190, fisso pesi, vario delta, poi vario pesi e fisso delta. 10 plot in totale
+result_names = ["fig3_120_80_0.1", "fig3_240_160_0.1","fig3_480_320_0.1", "fig3_720_480_0.1", "fig3_960_640_0.1", "fig3_1200_800_0.1"]; % to change
 
 
 % Either set different colors for each curve by default or by specifying
@@ -108,3 +108,4 @@ set(gca, 'FontSize', 40, 'GridAlpha', 0.3, 'FontName', 'Times New Roman');
 %exportgraphics(gcf, export_file, 'ContentType', 'vector', 'BackgroundColor', 'none');
 
 hold off;
+
