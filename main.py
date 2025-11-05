@@ -201,7 +201,7 @@ if __name__ == '__main__':
     num_services_type = 8
     delta = 0.1
     num_resources = [80]
-    weights_kpi = [0.2, 0.5, 0.3]
+    weights_kpi = [0.2, 0.5, 0.3]  # Deadline, datarate, PLR, respectively
     weights_kvi = [0.8, 0.1, 0.1]  # Trustworthiness, Inclusiveness, and Environmental Sustainability, respectively
 
     deadlines = [0.002, 0.5, 1, 10, 15]
