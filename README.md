@@ -77,6 +77,7 @@ Specified in `optimization.py`, including:
 - MIPGap, the allowable optimality gap between the best feasible solution and the theoretical bound
 - MIPFocus, the solver emphasis (e.g., finding feasible solutions fast vs. proving optimality)
 - VarBranch, the branching strategy (e.g., reduced-cost or strong branching)
+- Heuristics, the fraction of runtime spent on heuristics.
 
 Global parameters such as the carbon intensity factor (`CI`) and power usage effectiveness (`PUE`) can also be configured.
 For a complete explanation of parameters and methodology, refer to [this paper](https://www.sciencedirect.com/science/article/pii/S138912862500444X).
@@ -99,7 +100,7 @@ Once the csv files have been generated, it is possible to plot significant resul
 
     - Once again, several input parameters can be modified to adapt the analysis to different datasets or experimental conditions: the base path (`base_path`), the folder lists (`folders_proposed` and `folders_benchmark`), and the vector of services (`num_services`).
 
-  - Finally, the `plot_pareto_fronts.m` script is designed to visualize Pareto fronts obtained from multiple experimental configurations, highlighting the trade-off between network performance and social or ethical value. Each curve in the plot corresponds to a different configuration. For each configuration, the script reads the file `pareto_solutions.csv` located inside a results folder, extracts the total network quality performance (KPI) and total social and ethical value (KVI), and plots these as a series of connected points. The result is a comparative figure that shows how the Pareto fronts shift under varying system conditions.
+  - Finally, the `Pareto_Frontiers_Constructios.m` script is designed to visualize Pareto fronts obtained from multiple experimental configurations, highlighting the trade-off between network performance and social or ethical value. Each curve in the plot corresponds to a different configuration. For each configuration, the script reads the file `pareto_solutions.csv` located inside a results folder, extracts the total network quality performance (KPI) and total social and ethical value (KVI), and plots these as a series of connected points. The result is a comparative figure that shows how the Pareto fronts shift under varying system conditions.
 
     - Among the input parameters which can be modified to tailor the analysis, we recall the main path (`main_folder`). The list of result folders (`result_names`) defines which configurations are included in the plot and can be adjusted depending on the set of experiments being compared. 
 
