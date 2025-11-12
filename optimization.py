@@ -209,9 +209,10 @@ def optimize_kpi(service_requests, services, resources, normalized_kpi, normaliz
         GRB.MAXIMIZE
     )
 
-    model.setParam("MIPFocus", 3)  # less nodes
-    model.setParam("VarBranch", 2)  # aggressive branching 
+    model.setParam("MIPFocus", 0)  # Tree exploration strategy
+    model.setParam("VarBranch", -1)  # Branching strategy
     model.setParam("MIPGap", 0.03)
+    model.setParam('Heuristics', 0.05)  # Ask Gurobi to spend ___ time looking for improving solutions
 
     model.optimize()
     if model.IsMIP == 1:
@@ -297,9 +298,10 @@ def optimize_kvi(service_requests, services, resources, normalized_kpi, normaliz
         GRB.MAXIMIZE
     )
 
-    model.setParam("MIPFocus", 3)  # less nodes
-    model.setParam("VarBranch", 2)  # aggressive branching 
+    model.setParam("MIPFocus", 0)  # Tree exploration strategy
+    model.setParam("VarBranch", -1)  # Branching strategy
     model.setParam("MIPGap", 0.03)
+    model.setParam('Heuristics', 0.05)  # Ask Gurobi to spend ___ time looking for improving solutions
 
     model.optimize()
 
@@ -392,9 +394,10 @@ def q_nadir(service_requests, services, resources, normalized_kpi, normalized_kv
         GRB.MAXIMIZE
     )
 
-    model.setParam("MIPFocus", 3)  # less nodes
-    model.setParam("VarBranch", 2)  # aggressive branching
+    model.setParam("MIPFocus", 0)  # Tree exploration strategy
+    model.setParam("VarBranch", -1)  # Branching strategy
     model.setParam("MIPGap", 0.03)
+    model.setParam('Heuristics', 0.05)  # Ask Gurobi to spend ___ time looking for improving solutions
 
     model.optimize()
     print(f"DEBUG: Q_N computed = {model.ObjVal}")
@@ -489,9 +492,10 @@ def v_nadir(service_requests, services, resources, normalized_kpi, normalized_kv
         GRB.MAXIMIZE
     )
 
-    model.setParam("MIPFocus", 3)  # less nodes
-    model.setParam("VarBranch", 2)  # aggressive branching
+    model.setParam("MIPFocus", 0)  # Tree exploration strategy
+    model.setParam("VarBranch", -1)  # Branching strategy
     model.setParam("MIPGap", 0.03)
+    model.setParam('Heuristics', 0.05)  # Ask Gurobi to spend ___ time looking for improving solutions
 
     model.optimize()
     if model.IsMIP == 1:
@@ -594,9 +598,10 @@ def epsilon_constraint_exact(service_requests, services, resources, normalized_k
             GRB.MAXIMIZE
         )
 
-        model.setParam("MIPFocus", 3)  # less nodes
-        model.setParam("VarBranch", 2)  # aggressive branching
-        model.setParam("MIPGap", 0.03)  # stop search when the gap is less than 2.8%
+        model.setParam("MIPFocus", 0)  # Tree exploration strategy
+        model.setParam("VarBranch", -1)  # Branching strategy
+        model.setParam("MIPGap", 0.03)
+        model.setParam('Heuristics', 0.05)  # Ask Gurobi to spend ___ time looking for improving solutions
 
         # Solve model
         model.optimize()
